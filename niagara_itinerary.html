@@ -1,0 +1,2375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Eli &amp; Damaris · A Weekend in Niagara · May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Pinyon+Script&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f1e8d6;
+    --paper-deep: #e8dcc4;
+    --ink: #1a1410;
+    --ink-soft: #3d2f24;
+    --teal: #0e3640;
+    --teal-deep: #082730;
+    --copper: #b56b4a;
+    --copper-deep: #8b4d35;
+    --gold: #d4a574;
+    --gold-soft: #e8d5a8;
+    --mist: #e8e2d3;
+    --rose: #c98572;
+    --rule: rgba(26, 20, 16, 0.18);
+    --shadow: 0 1px 0 rgba(26,20,16,0.04), 0 8px 24px -8px rgba(14,54,64,0.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(ellipse 1200px 600px at 20% 0%, rgba(212,165,116,0.12), transparent 60%),
+      radial-gradient(ellipse 800px 400px at 90% 30%, rgba(14,54,64,0.06), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.06 0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  ::selection { background: var(--copper); color: var(--paper); }
+
+  /* ─────────────── Typography ─────────────── */
+  .display {
+    font-family: 'Italiana', serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  .script {
+    font-family: 'Pinyon Script', cursive;
+    font-weight: 400;
+  }
+  .smallcaps {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-weight: 500;
+  }
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78em;
+    letter-spacing: 0.05em;
+  }
+
+  /* ─────────────── Layout ─────────────── */
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .container-narrow {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ─────────────── Top Bar ─────────────── */
+  .topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    background: rgba(241, 232, 214, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.7, 0, 0.2, 1);
+  }
+  .topbar.visible { transform: translateY(0); }
+  .topbar-brand {
+    font-family: 'Italiana', serif;
+    font-size: 16px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .topbar-nav {
+    display: flex;
+    gap: 28px;
+  }
+  .topbar-nav a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 500;
+  }
+  .topbar-nav a:hover { color: var(--copper); }
+  @media (max-width: 800px) {
+    .topbar-nav { display: none; }
+  }
+
+  /* ─────────────── Hero ─────────────── */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 32px 80px;
+    overflow: hidden;
+  }
+
+  .hero-watermark {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.07;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-watermark svg {
+    width: 90vw;
+    max-width: 900px;
+    height: auto;
+  }
+
+  .hero-frame {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 60px 0 50px;
+    text-align: center;
+  }
+
+  .hero-postmark {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeUp 1.2s 0.2s forwards;
+  }
+
+  .hero-title {
+    font-size: clamp(64px, 13vw, 180px);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    margin: 0;
+    color: var(--ink);
+    opacity: 0;
+    animation: fadeUp 1.4s 0.5s forwards;
+  }
+  .hero-title .amp {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 0.7em;
+    color: var(--copper);
+    font-style: italic;
+    margin: 0 0.05em;
+    vertical-align: -0.06em;
+  }
+
+  .hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 32px 0;
+    opacity: 0;
+    animation: fadeUp 1s 0.9s forwards;
+  }
+  .hero-divider .line {
+    width: 80px;
+    height: 1px;
+    background: var(--ink);
+  }
+  .hero-divider .ornament {
+    color: var(--copper);
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .hero-subtitle {
+    font-family: 'Pinyon Script', cursive;
+    font-size: clamp(32px, 5vw, 56px);
+    color: var(--copper-deep);
+    line-height: 1.1;
+    margin-bottom: 6px;
+    opacity: 0;
+    animation: fadeUp 1.2s 1.1s forwards;
+  }
+
+  .hero-occasion {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(18px, 2vw, 24px);
+    color: var(--ink-soft);
+    opacity: 0;
+    animation: fadeUp 1s 1.4s forwards;
+  }
+
+  .hero-meta {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: clamp(20px, 5vw, 80px);
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1s 1.7s forwards;
+  }
+  .hero-meta-item {
+    text-align: center;
+  }
+  .hero-meta-label {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 10px;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .hero-meta-value {
+    font-family: 'Italiana', serif;
+    font-size: clamp(18px, 2.5vw, 26px);
+    color: var(--ink);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    opacity: 0;
+    animation: fadeUp 1s 2s forwards;
+  }
+  .hero-scroll-line {
+    width: 1px;
+    height: 50px;
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-scroll-line::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0; right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, transparent, var(--copper));
+    animation: dripDown 2.2s infinite;
+  }
+  @keyframes dripDown {
+    0% { top: -100%; }
+    100% { top: 200%; }
+  }
+  .hero-scroll-text {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 10px;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─────────────── Section Header ─────────────── */
+  .section {
+    padding: 120px 0;
+    position: relative;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  .section-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    font-size: 11px;
+    color: var(--copper);
+    margin-bottom: 18px;
+  }
+  .section-title {
+    font-family: 'Italiana', serif;
+    font-size: clamp(38px, 6vw, 72px);
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .section-lede {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(18px, 2vw, 22px);
+    color: var(--ink-soft);
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  /* ─────────────── Letter Section ─────────────── */
+  .letter {
+    background: linear-gradient(180deg, transparent 0%, rgba(232, 226, 211, 0.5) 50%, transparent 100%);
+    text-align: center;
+  }
+  .letter-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .letter-content p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 2.4vw, 26px);
+    line-height: 1.7;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  .letter-signature {
+    margin-top: 40px;
+    font-family: 'Pinyon Script', cursive;
+    font-size: 38px;
+    color: var(--copper);
+  }
+
+  /* ─────────────── Bus Section ─────────────── */
+  .bus {
+    background: var(--teal-deep);
+    color: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+  .bus::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 0.95 0 0 0 0 0.85 0 0 0 0.04 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .bus .section-eyebrow { color: var(--gold); }
+  .bus .section-title { color: var(--paper); }
+  .bus .section-lede { color: rgba(241, 232, 214, 0.7); }
+
+  .ticket-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 40px;
+    position: relative;
+  }
+  @media (max-width: 760px) {
+    .ticket-grid { grid-template-columns: 1fr; }
+  }
+
+  .ticket {
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 36px;
+    position: relative;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.4), 0 18px 36px -18px rgba(0,0,0,0.3);
+    transform: rotate(-0.4deg);
+    transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.3, 1);
+  }
+  .ticket:nth-child(2) { transform: rotate(0.6deg); }
+  .ticket:hover { transform: rotate(0) translateY(-4px); }
+
+  .ticket::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    background: var(--teal-deep);
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  .ticket::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background: var(--teal-deep);
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+
+  .ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--rule);
+    margin-bottom: 22px;
+  }
+  .ticket-co {
+    font-family: 'Italiana', serif;
+    font-size: 22px;
+    color: var(--ink);
+  }
+  .ticket-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 4px 10px;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+  }
+  .ticket-route {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+  .ticket-stop {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .ticket-stop .label {
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+  }
+  .ticket-stop .city {
+    font-family: 'Italiana', serif;
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .ticket-stop .detail {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+  .ticket-arrow {
+    color: var(--copper);
+    font-size: 24px;
+  }
+  .ticket-stop.right { text-align: right; }
+
+  .ticket-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--rule);
+  }
+  .ticket-meta-item .label {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--ink-soft);
+    margin-bottom: 2px;
+  }
+  .ticket-meta-item .value {
+    font-family: 'Italiana', serif;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .ticket-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 11px;
+    color: var(--copper-deep);
+    text-decoration: none;
+    border-bottom: 1px solid var(--copper-deep);
+    padding-bottom: 2px;
+    transition: gap 0.3s;
+  }
+  .ticket-cta:hover { gap: 14px; }
+
+  .bus-tip {
+    margin-top: 60px;
+    padding: 28px 32px;
+    border: 1px solid rgba(212, 165, 116, 0.4);
+    border-radius: 4px;
+    color: var(--paper);
+    position: relative;
+    background: rgba(241, 232, 214, 0.04);
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bus-tip-label {
+    position: absolute;
+    top: -10px;
+    left: 24px;
+    background: var(--teal-deep);
+    padding: 0 12px;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 10px;
+    color: var(--gold);
+  }
+  .bus-tip p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(241, 232, 214, 0.85);
+  }
+  .bus-tip strong {
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  /* ─────────────── Itinerary Days ─────────────── */
+  .days-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0;
+    margin-bottom: 0;
+  }
+  .days-nav-inner {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .days-nav button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px 28px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--ink-soft);
+    position: relative;
+    transition: color 0.3s;
+  }
+  .days-nav button.active {
+    color: var(--copper);
+  }
+  .days-nav button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -19px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    background: var(--copper);
+    border-radius: 50%;
+  }
+  .days-nav button:hover { color: var(--copper); }
+  @media (max-width: 600px) {
+    .days-nav button { padding: 8px 12px; font-size: 11px; }
+  }
+
+  .day {
+    display: none;
+    animation: fadeUp 0.6s ease;
+  }
+  .day.active { display: block; }
+
+  .day-hero {
+    text-align: center;
+    padding: 80px 32px 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .day-number {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 48px;
+    color: var(--copper);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .day-date {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+  .day-title {
+    font-family: 'Italiana', serif;
+    font-size: clamp(40px, 6vw, 84px);
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .day-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(18px, 2vw, 22px);
+    color: var(--ink-soft);
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  /* ─────────────── Timeline ─────────────── */
+  .timeline {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 60px 32px 120px;
+    position: relative;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 110px;
+    top: 60px;
+    bottom: 60px;
+    width: 1px;
+    background: var(--rule);
+  }
+  @media (max-width: 700px) {
+    .timeline::before { left: 24px; }
+  }
+
+  .moment {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 32px;
+    margin-bottom: 36px;
+    position: relative;
+    align-items: start;
+  }
+  @media (max-width: 700px) {
+    .moment {
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding-left: 50px;
+    }
+  }
+
+  .moment-time {
+    text-align: right;
+    padding-top: 6px;
+    position: relative;
+  }
+  .moment-time .clock {
+    font-family: 'Italiana', serif;
+    font-size: 20px;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .moment-time .label {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 9px;
+    color: var(--ink-soft);
+  }
+  @media (max-width: 700px) {
+    .moment-time {
+      text-align: left;
+      margin-bottom: 8px;
+    }
+  }
+
+  .moment-dot {
+    position: absolute;
+    right: -36px;
+    top: 8px;
+    width: 14px;
+    height: 14px;
+    background: var(--paper);
+    border: 2px solid var(--copper);
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .moment.starred .moment-dot {
+    background: var(--copper);
+    box-shadow: 0 0 0 4px rgba(181, 107, 74, 0.18);
+  }
+  @media (max-width: 700px) {
+    .moment-dot {
+      right: auto;
+      left: -34px;
+    }
+  }
+
+  .moment-card {
+    background: rgba(241, 232, 214, 0.7);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 24px 28px;
+    transition: all 0.4s cubic-bezier(0.2, 0.7, 0.3, 1);
+    position: relative;
+  }
+  .moment-card:hover {
+    background: var(--paper);
+    transform: translateY(-2px);
+    box-shadow: 0 18px 32px -16px rgba(14, 54, 64, 0.15);
+    border-color: var(--copper);
+  }
+
+  .moment.starred .moment-card {
+    background: linear-gradient(180deg, rgba(212, 165, 116, 0.12), rgba(241, 232, 214, 0.7));
+    border-color: var(--copper);
+  }
+
+  .moment-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .moment-tag {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 9px;
+    color: var(--copper);
+  }
+  .moment-cost {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+
+  .moment-title {
+    font-family: 'Italiana', serif;
+    font-size: 26px;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .moment-title .heart {
+    color: var(--copper);
+    font-size: 0.6em;
+    vertical-align: 0.2em;
+    margin-left: 6px;
+  }
+
+  .moment-body {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .moment-body em {
+    color: var(--copper-deep);
+    font-style: italic;
+  }
+
+  .moment-tip {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: rgba(212, 165, 116, 0.15);
+    border-left: 2px solid var(--copper);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--ink-soft);
+    border-radius: 0 4px 4px 0;
+  }
+  .moment-tip strong {
+    font-style: normal;
+    color: var(--copper-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 10px;
+  }
+
+  /* ─────────────── Stay Section ─────────────── */
+  .stay-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .stay-card {
+    background: var(--paper-deep);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 28px;
+    transition: all 0.4s;
+    position: relative;
+  }
+  .stay-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -20px rgba(14, 54, 64, 0.25);
+  }
+  .stay-card.featured {
+    background: var(--teal-deep);
+    color: var(--paper);
+    border: none;
+  }
+  .stay-card.featured .stay-name { color: var(--paper); }
+  .stay-card.featured .stay-detail { color: rgba(241, 232, 214, 0.75); }
+  .stay-card.featured .stay-tag { color: var(--gold); }
+
+  .stay-tag {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 10px;
+    color: var(--copper);
+    margin-bottom: 10px;
+  }
+  .stay-name {
+    font-family: 'Italiana', serif;
+    font-size: 24px;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .stay-price {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    margin-bottom: 14px;
+  }
+  .stay-detail {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .stay-feature {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--rule);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--copper-deep);
+  }
+  .stay-card.featured .stay-feature {
+    color: var(--gold-soft);
+    border-top-color: rgba(212, 165, 116, 0.3);
+  }
+
+  /* ─────────────── Eat Section ─────────────── */
+  .eat-section {
+    background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  }
+
+  .eat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 40px;
+  }
+  @media (max-width: 800px) {
+    .eat-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  .eat-column h3 {
+    font-family: 'Italiana', serif;
+    font-size: 32px;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .eat-column .col-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--copper);
+    margin-bottom: 24px;
+    font-size: 15px;
+  }
+  .eat-list {
+    list-style: none;
+  }
+  .eat-list li {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .eat-list li:last-child { border-bottom: none; }
+  .eat-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 19px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .eat-name .crown { color: var(--copper); margin-right: 6px; }
+  .eat-desc {
+    font-family: 'EB Garamond', serif;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .eat-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--copper-deep);
+    margin-top: 6px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ─────────────── Tips Section ─────────────── */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    margin-top: 40px;
+  }
+  .tip {
+    border: 1px solid var(--rule);
+    padding: 32px 28px;
+    position: relative;
+    background: var(--paper);
+    transition: all 0.4s;
+  }
+  .tip:hover {
+    border-color: var(--copper);
+    transform: translateY(-3px);
+  }
+  .tip-num {
+    position: absolute;
+    top: -16px;
+    left: 24px;
+    background: var(--paper);
+    padding: 0 10px;
+    font-family: 'Italiana', serif;
+    font-size: 28px;
+    color: var(--copper);
+    line-height: 1;
+  }
+  .tip-title {
+    font-family: 'Italiana', serif;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .tip-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .tip-body strong {
+    color: var(--copper-deep);
+  }
+
+  /* ─────────────── Checklist Section ─────────────── */
+  .checklist-section {
+    background: var(--teal-deep);
+    color: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+  .checklist-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 0.95 0 0 0 0 0.85 0 0 0 0.04 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .checklist-section .section-eyebrow { color: var(--gold); }
+  .checklist-section .section-title { color: var(--paper); }
+  .checklist-section .section-lede { color: rgba(241, 232, 214, 0.7); }
+
+  .checklist-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(241, 232, 214, 0.2);
+    flex-wrap: wrap;
+  }
+  .checklist-tabs button {
+    background: transparent;
+    border: none;
+    color: rgba(241, 232, 214, 0.6);
+    padding: 14px 28px;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 13px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+  }
+  .checklist-tabs button.active {
+    color: var(--gold);
+  }
+  .checklist-tabs button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  .checklist-progress {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    position: relative;
+  }
+  .checklist-progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 11px;
+    color: rgba(241, 232, 214, 0.7);
+  }
+  .checklist-progress-bar {
+    height: 6px;
+    background: rgba(241, 232, 214, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .checklist-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--copper), var(--gold));
+    width: 0%;
+    transition: width 0.6s cubic-bezier(0.2, 0.8, 0.3, 1);
+    border-radius: 3px;
+  }
+
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .checklist-pane { display: none; }
+  .checklist-pane.active { display: grid; }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 18px;
+    background: rgba(241, 232, 214, 0.05);
+    border: 1px solid rgba(241, 232, 214, 0.1);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    user-select: none;
+  }
+  .check-item:hover {
+    background: rgba(241, 232, 214, 0.1);
+    border-color: rgba(212, 165, 116, 0.4);
+  }
+  .check-item.checked {
+    background: rgba(212, 165, 116, 0.12);
+    border-color: rgba(212, 165, 116, 0.5);
+  }
+  .check-box {
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid rgba(241, 232, 214, 0.4);
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .check-item.checked .check-box {
+    background: var(--copper);
+    border-color: var(--copper);
+  }
+  .check-item.checked .check-box::after {
+    content: '✓';
+    position: absolute;
+    inset: 0;
+    color: var(--paper);
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .check-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    line-height: 1.4;
+    color: var(--paper);
+    flex: 1;
+  }
+  .check-item.checked .check-text {
+    text-decoration: line-through;
+    text-decoration-color: rgba(241, 232, 214, 0.4);
+    color: rgba(241, 232, 214, 0.55);
+  }
+  .check-text small {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    margin-top: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ─────────────── Budget Section ─────────────── */
+  .budget {
+    max-width: 700px;
+    margin: 80px auto 0;
+    padding: 40px 32px;
+    background: var(--paper-deep);
+    border-top: 2px solid var(--copper);
+    border-bottom: 2px solid var(--copper);
+  }
+  .budget-title {
+    font-family: 'Italiana', serif;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 28px;
+    color: var(--ink);
+  }
+  .budget-rows {
+    display: grid;
+    gap: 14px;
+  }
+  .budget-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .budget-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    color: var(--ink-soft);
+  }
+  .budget-label small {
+    font-size: 12px;
+    color: var(--copper);
+    margin-left: 6px;
+    font-style: italic;
+  }
+  .budget-amt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .budget-row.total {
+    border-bottom: none;
+    padding-top: 12px;
+    border-top: 2px solid var(--ink);
+    margin-top: 12px;
+  }
+  .budget-row.total .budget-label {
+    font-family: 'Italiana', serif;
+    font-size: 22px;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  .budget-row.total .budget-amt {
+    font-size: 20px;
+    color: var(--copper-deep);
+    font-weight: bold;
+  }
+
+  /* ─────────────── Footer ─────────────── */
+  .footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 32px;
+    text-align: center;
+    position: relative;
+  }
+  .footer-mark {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 64px;
+    color: var(--copper);
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+  .footer-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: rgba(241, 232, 214, 0.75);
+    max-width: 540px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+  }
+  .footer-divider {
+    width: 60px;
+    height: 1px;
+    background: rgba(241, 232, 214, 0.3);
+    margin: 30px auto;
+  }
+  .footer-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(241, 232, 214, 0.4);
+    letter-spacing: 0.2em;
+  }
+
+  /* ─────────────── SVG decorations ─────────────── */
+  .ornament-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 30px 0;
+    color: var(--copper);
+  }
+  .ornament-divider .line {
+    height: 1px;
+    background: var(--rule);
+    flex: 1;
+    max-width: 100px;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ─────────────── Top Bar ─────────────── -->
+<nav class="topbar" id="topbar">
+  <div class="topbar-brand">E &amp; D · Niagara '26</div>
+  <div class="topbar-nav">
+    <a href="#bus">Travel</a>
+    <a href="#itinerary">Itinerary</a>
+    <a href="#stay">Stay</a>
+    <a href="#eat">Eat</a>
+    <a href="#tips">Tips</a>
+    <a href="#checklist">Checklist</a>
+  </div>
+</nav>
+
+<!-- ─────────────── Hero ─────────────── -->
+<section class="hero">
+  <div class="hero-watermark">
+    <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="fg" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#0e3640"/>
+          <stop offset="100%" stop-color="#0e3640" stop-opacity="0.2"/>
+        </linearGradient>
+      </defs>
+      <!-- Stylized falls -->
+      <path d="M 50 200 L 750 200 L 750 250 L 700 280 Q 690 290 685 310 L 670 480 L 130 480 L 115 310 Q 110 290 100 280 L 50 250 Z" fill="none" stroke="#0e3640" stroke-width="1.5"/>
+      <!-- Falling water lines -->
+      <g stroke="#0e3640" stroke-width="0.8" fill="none">
+        <line x1="180" y1="280" x2="190" y2="470"/>
+        <line x1="220" y1="280" x2="225" y2="470"/>
+        <line x1="260" y1="280" x2="262" y2="470"/>
+        <line x1="300" y1="280" x2="298" y2="470"/>
+        <line x1="340" y1="280" x2="335" y2="470"/>
+        <line x1="380" y1="280" x2="372" y2="470"/>
+        <line x1="420" y1="280" x2="428" y2="470"/>
+        <line x1="460" y1="280" x2="465" y2="470"/>
+        <line x1="500" y1="280" x2="502" y2="470"/>
+        <line x1="540" y1="280" x2="538" y2="470"/>
+        <line x1="580" y1="280" x2="575" y2="470"/>
+        <line x1="620" y1="280" x2="610" y2="470"/>
+      </g>
+      <!-- Mist circles at the base -->
+      <g fill="#0e3640" opacity="0.4">
+        <circle cx="200" cy="490" r="14"/>
+        <circle cx="280" cy="500" r="20"/>
+        <circle cx="380" cy="495" r="18"/>
+        <circle cx="450" cy="510" r="22"/>
+        <circle cx="540" cy="500" r="16"/>
+        <circle cx="620" cy="495" r="14"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-frame container-narrow">
+    <div class="hero-postmark">·  Niagara Falls  ·  May 22 to 24, 2026  ·</div>
+    <h1 class="hero-title display">
+      Eli<span class="amp">&amp;</span>Damaris
+    </h1>
+    <div class="hero-divider">
+      <span class="line"></span>
+      <span class="ornament">✦</span>
+      <span class="line"></span>
+    </div>
+    <div class="hero-subtitle">a weekend at the falls</div>
+    <p class="hero-occasion">in celebration of his graduation</p>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">depart</span>
+        <span class="hero-meta-value display">Fri 22 May</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">return</span>
+        <span class="hero-meta-value display">Sun 24 May</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">distance</span>
+        <span class="hero-meta-value display">408 mi</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">conveyance</span>
+        <span class="hero-meta-value display">by motorcoach</span>
+      </div>
+    </div>
+  </div>
+
+  <a href="#letter" class="hero-scroll">
+    <span class="hero-scroll-text">begin</span>
+    <span class="hero-scroll-line"></span>
+  </a>
+</section>
+
+<!-- ─────────────── Letter ─────────────── -->
+<section class="section letter" id="letter">
+  <div class="letter-content">
+    <p>You finished. The reading lists, the cold-call cases, the late nights in the library, the bar prep waiting on the horizon. You did the thing.</p>
+    <p>So we are leaving. Just for three days. Just the two of you, the highway, and the loudest, prettiest waterfall in the country. There will be mist in your hair, fireworks at ten, rainbows at sunrise if you're brave enough to wake up.</p>
+    <p>Pack light. Bring a poncho. Bring her hand.</p>
+    <div class="letter-signature">with love,<br/>the weekend</div>
+  </div>
+</section>
+
+<!-- ─────────────── Bus / Travel ─────────────── -->
+<section class="section bus" id="bus">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Part One</div>
+      <h2 class="section-title">The Long Road Up</h2>
+      <p class="section-lede">Two motorcoaches a day climb from Manhattan up the spine of New York State to the gorge. Around eight hours, around fifty dollars. Wi-Fi, outlets, a window seat, and the slow reveal of the country between you and the water.</p>
+    </div>
+
+    <div class="ticket-grid">
+      <!-- OurBus ticket -->
+      <div class="ticket">
+        <div class="ticket-header">
+          <div class="ticket-co">OurBus</div>
+          <div class="ticket-pill">RECOMMENDED</div>
+        </div>
+        <div class="ticket-route">
+          <div class="ticket-stop">
+            <div class="label">From</div>
+            <div class="city display">NYC</div>
+            <div class="detail">GW Bridge Bus Station, Level 3 Slip 2, 175 St (1 stop on A train from UWS)</div>
+          </div>
+          <div class="ticket-arrow">→</div>
+          <div class="ticket-stop right">
+            <div class="label">To</div>
+            <div class="city display">Niagara</div>
+            <div class="detail">Old Main St, charter zone behind Visitor Center, one block from State Park</div>
+          </div>
+        </div>
+        <div class="ticket-meta">
+          <div class="ticket-meta-item">
+            <div class="label">Depart</div>
+            <div class="value">6:30 AM</div>
+          </div>
+          <div class="ticket-meta-item">
+            <div class="label">Duration</div>
+            <div class="value">~8h 30m</div>
+          </div>
+          <div class="ticket-meta-item">
+            <div class="label">From</div>
+            <div class="value">$39+</div>
+          </div>
+        </div>
+        <a href="https://www.ourbus.com/routes/nyc-to-niagarafalls" target="_blank" rel="noopener" class="ticket-cta">Book at OurBus →</a>
+      </div>
+
+      <!-- Greyhound ticket -->
+      <div class="ticket">
+        <div class="ticket-header">
+          <div class="ticket-co">Greyhound</div>
+          <div class="ticket-pill">BACKUP</div>
+        </div>
+        <div class="ticket-route">
+          <div class="ticket-stop">
+            <div class="label">From</div>
+            <div class="city display">NYC</div>
+            <div class="detail">Port Authority Bus Terminal, 625 8th Ave, lower level (1 train at 50th)</div>
+          </div>
+          <div class="ticket-arrow">→</div>
+          <div class="ticket-stop right">
+            <div class="label">To</div>
+            <div class="city display">Niagara</div>
+            <div class="detail">Niagara Falls Bus Terminal, 4th &amp; Niagara, walking distance to State Park</div>
+          </div>
+        </div>
+        <div class="ticket-meta">
+          <div class="ticket-meta-item">
+            <div class="label">Depart</div>
+            <div class="value">9 buses/day</div>
+          </div>
+          <div class="ticket-meta-item">
+            <div class="label">Duration</div>
+            <div class="value">~8h 51m</div>
+          </div>
+          <div class="ticket-meta-item">
+            <div class="label">From</div>
+            <div class="value">$55+</div>
+          </div>
+        </div>
+        <a href="https://www.greyhound.com/bus-routes/new-york-ny-niagara-falls-ny" target="_blank" rel="noopener" class="ticket-cta">Book at Greyhound →</a>
+      </div>
+    </div>
+
+    <div class="bus-tip">
+      <span class="bus-tip-label">A note on timing</span>
+      <p>This is <strong>Memorial Day weekend</strong>, the unofficial start of summer tourism at the Falls. Buses, hotels, and Maid of the Mist boats fill fast and prices climb the longer you wait. Lock in everything within the next week. The 6:30 AM OurBus puts you at the Falls by mid-afternoon Friday, with enough light left to see your first rainbow before dinner. For the return, the 11:00 AM bus on Sunday gets you home around 8 PM. Both rides have free Wi-Fi and outlets, which means you get eight uninterrupted hours of side-by-side window time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── Itinerary ─────────────── -->
+<section id="itinerary">
+  <div class="days-nav" id="daysNav">
+    <div class="container">
+      <div class="days-nav-inner">
+        <button data-day="1" class="active">Day One · Friday</button>
+        <button data-day="2">Day Two · Saturday</button>
+        <button data-day="3">Day Three · Sunday</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day active" id="day1">
+    <div class="day-hero">
+      <div class="day-number">day one</div>
+      <div class="day-date">Friday · May 22, 2026</div>
+      <h2 class="day-title">Arrival &amp; First Light</h2>
+      <p class="day-tagline">A long ride that ends with the loudest welcome of your life. By dinner you'll be standing at the brink.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">5:30 AM</div>
+          <div class="label">Pre-dawn</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">depart UWS</span>
+            <span class="moment-cost">$25 cab</span>
+          </div>
+          <h3 class="moment-title">Cab to the GWB</h3>
+          <p class="moment-body">Wake up too early. Coffee in a thermos. Take a yellow cab or Uber from the UWS up to the George Washington Bridge Bus Station at 175th and Fort Washington. About fifteen minutes at this hour. The A train works too if you want to save the fare; the station is right at the 175th Street stop.</p>
+          <div class="moment-tip"><strong>Pack the night before.</strong> Backpacks only, no checked bags needed. Throw in two ponchos (you'll get one free on the boat but have backups).</div>
+        </div>
+      </div>
+
+      <div class="moment starred">
+        <div class="moment-time">
+          <div class="clock">6:30 AM</div>
+          <div class="label">Departure</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">★ on the road</span>
+            <span class="moment-cost">~$50 each</span>
+          </div>
+          <h3 class="moment-title">Board OurBus to Niagara <span class="heart">♡</span></h3>
+          <p class="moment-body">Eight and a half hours up the Hudson, across the Mohawk Valley, past Syracuse, past Rochester, past every horizon line you've ever seen. Free Wi-Fi, outlets at every seat, complimentary water. <em>Sit on the right side</em> for better river views on the way up. Bring a book she's been meaning to read aloud.</p>
+          <div class="moment-tip"><strong>Snack run:</strong> No real meal stops. Pack sandwiches from Zabar's or Citarella, a thermos, and something sweet. The bus does pull over once in Syracuse if you need to stretch.</div>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">3:00 PM</div>
+          <div class="label">Arrival</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">drop-off</span>
+            <span class="moment-cost">free</span>
+          </div>
+          <h3 class="moment-title">Step off the bus, hear the falls</h3>
+          <p class="moment-body">OurBus drops at Old Main Street, charter zone behind the Visitor Center. You are now <em>literally one block</em> from the entrance to Niagara Falls State Park. Walk to your hotel, drop bags, and breathe. You can already hear the water from here.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">3:45 PM</div>
+          <div class="label">Settle in</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">check in</span>
+          </div>
+          <h3 class="moment-title">Hotel check-in</h3>
+          <p class="moment-body">Whichever spot you've booked (see the Stay section below), drop the bags, change into something you don't mind getting damp. Comfortable shoes, layers, a light jacket for the gorge breeze. Take a quick photo at the door before you walk out, you'll want it later.</p>
+        </div>
+      </div>
+
+      <div class="moment starred">
+        <div class="moment-time">
+          <div class="clock">4:30 PM</div>
+          <div class="label">First view</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">★ the brink</span>
+            <span class="moment-cost">free</span>
+          </div>
+          <h3 class="moment-title">Prospect Point Observation Tower <span class="heart">♡</span></h3>
+          <p class="moment-body">Walk to the edge. Prospect Point is the closest you can stand to the American Falls without getting wet. Take the elevator down to the gorge for a bird's-eye view of the whole horseshoe across the river. <em>Save the boat ride for after, the anticipation matters.</em></p>
+          <div class="moment-tip"><strong>Worth knowing:</strong> The Niagara Falls State Park is the oldest state park in America. Free to enter, open 24/7. The Observation Tower is $1.25 per person. That is not a typo.</div>
+        </div>
+      </div>
+
+      <div class="moment starred">
+        <div class="moment-time">
+          <div class="clock">5:00 PM</div>
+          <div class="label">Boat</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">★ the moment</span>
+            <span class="moment-cost">$30.25 each</span>
+          </div>
+          <h3 class="moment-title">Maid of the Mist <span class="heart">♡</span></h3>
+          <p class="moment-body">The most famous boat tour in North America, running since 1846. They hand you a blue poncho. The boat noses out into the gorge. You drift past the American Falls. Then the captain swings you straight into the curve of Horseshoe Falls and the world disappears into white. Twenty minutes. You will be soaked. <em>You will not stop smiling.</em></p>
+          <div class="moment-tip"><strong>Late-day trick:</strong> Lines are shortest in the late afternoon (after 4 PM crowds clear). Tickets are first-come-first-served even online, so just walk up. Last boats leave around 6 PM in May.</div>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">7:00 PM</div>
+          <div class="label">Dinner</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">first dinner</span>
+            <span class="moment-cost">$$</span>
+          </div>
+          <h3 class="moment-title">The Red Coach Inn</h3>
+          <p class="moment-body">A hundred-year-old Tudor-style inn 500 yards from the Falls. Walk-in friendly, but reserve. Order the prime rib if you want classic, the seafood if you want lighter. Ask for a patio table if the weather holds, you can hear the water from there.</p>
+          <div class="moment-tip"><strong>Want something different?</strong> Savor at the Niagara Falls Culinary Institute is the modern alternative: student chefs, open kitchen, locally sourced. Same price range, very different vibe.</div>
+        </div>
+      </div>
+
+      <div class="moment starred">
+        <div class="moment-time">
+          <div class="clock">9:00 PM</div>
+          <div class="label">Night falls</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">★ illumination</span>
+            <span class="moment-cost">free</span>
+          </div>
+          <h3 class="moment-title">The Falls in color</h3>
+          <p class="moment-body">Every night at 8 PM, twenty-one xenon spotlights come on across the gorge and the water turns rose, then violet, then turquoise, then gold. Walk the path along the rim. There are benches. The mist makes everything halo.</p>
+        </div>
+      </div>
+
+      <div class="moment starred">
+        <div class="moment-time">
+          <div class="clock">10:00 PM</div>
+          <div class="label">Fireworks</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">★ end of night one</span>
+            <span class="moment-cost">free</span>
+          </div>
+          <h3 class="moment-title">Fireworks over the gorge <span class="heart">♡</span></h3>
+          <p class="moment-body">Five minutes. They go off from inside the gorge, between the American and Horseshoe Falls, and they reflect off the water and the mist and the lit-up cataract behind them. It's the longest-running fireworks series in Canada. May 22 is the eighth night of the season, so the crew is sharp. <em>Best US-side view: Terrapin Point on Goat Island.</em></p>
+          <div class="moment-tip"><strong>Heads up:</strong> Fireworks run nightly from May 15 through October 12, weather permitting. Strong winds cancel; check 1-877-642-7275.</div>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">11:00 PM</div>
+          <div class="label">Goodnight</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <h3 class="moment-title">Walk back, slowly</h3>
+          <p class="moment-body">Hold hands. Don't talk if you don't need to. The water is still crashing in the dark behind you.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day" id="day2">
+    <div class="day-hero">
+      <div class="day-number">day two</div>
+      <div class="day-date">Saturday · May 23, 2026</div>
+      <h2 class="day-title">Into the Thunder</h2>
+      <p class="day-tagline">The big day. You'll get wet twice, walk through a cave of wind, and see the Falls from three countries' worth of angles.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">7:30 AM</div>
+          <div class="label">Wake</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">slow start</span>
+          </div>
+          <h3 class="moment-title">Breakfast in bed (or close to it)</h3>
+          <p class="moment-body">Most hotels on the US side have an included breakfast. Eat well. Carbs. Coffee. You'll need it. If you'd rather walk: Tim Hortons on Niagara Street is 1990s strip-mall but it's a Niagara classic, and the bagels here are weirdly good.</p>
+        </div>
+      </div>
+
+      <div class="moment starred">
+        <div class="moment-time">
+          <div class="clock">9:00 AM</div>
+          <div class="label">Cave of the Winds</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">★ get wet again</span>
+            <span class="moment-cost">$23 each</span>
+          </div>
+          <h3 class="moment-title">Cave of the Winds, Hurricane Deck <span class="heart">♡</span></h3>
+          <p class="moment-body">Take an elevator 175 feet down into the gorge, then walk up wooden walkways toward the base of Bridal Veil Falls. The closest deck (the Hurricane Deck) puts you ten feet from a falling sheet of water moving at 68 mph. They give you a poncho and special sandals. <em>You will get drenched and you will not care.</em></p>
+          <div class="moment-tip"><strong>Book first thing:</strong> Cave of the Winds uses timed tickets. Reserve the 9:30 AM slot online before you go to skip the morning rush.</div>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">11:00 AM</div>
+          <div class="label">Walk it off</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">stroll</span>
+            <span class="moment-cost">free</span>
+          </div>
+          <h3 class="moment-title">Goat Island &amp; Three Sisters</h3>
+          <p class="moment-body">Cross the bridge to Goat Island, the green sliver between the American and Horseshoe Falls. The Three Sisters Islands are tiny stepping-stone islets in the upper rapids; you can walk all three. <em>Terrapin Point</em> at the far end has the single best view of the Canadian Horseshoe Falls from the US side.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">12:30 PM</div>
+          <div class="label">Lunch</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">refuel</span>
+            <span class="moment-cost">$$</span>
+          </div>
+          <h3 class="moment-title">Top of the Falls Restaurant</h3>
+          <p class="moment-body">Right inside the State Park on Goat Island, with a wall of windows looking onto Horseshoe Falls. Seasonal, casual, mid-range. The view does most of the work; the food is solid American. Reserve a window table.</p>
+          <div class="moment-tip"><strong>Lighter option:</strong> Pack lunch from the morning and picnic at the Three Sisters. There are benches and zero crowds.</div>
+        </div>
+      </div>
+
+      <div class="moment starred">
+        <div class="moment-time">
+          <div class="clock">2:00 PM</div>
+          <div class="label">Crossing</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">★ if you have passports</span>
+            <span class="moment-cost">$1 toll</span>
+          </div>
+          <h3 class="moment-title">Walk across the Rainbow Bridge to Canada <span class="heart">♡</span></h3>
+          <p class="moment-body">The American side gives you intimacy with the Falls; the Canadian side gives you the postcard. Walk over the Rainbow Bridge (toll: 50¢ on foot, $4 by car). <em>Bring passports.</em> The crossing is twenty minutes including the booth, and the first view you get when you reach Queen Victoria Park is the one that makes people cry.</p>
+          <div class="moment-tip"><strong>No passports?</strong> Skip Canada and do the Niagara Power Vista (free, fascinating Tesla/Edison history) and the Whirlpool State Park hike instead. The plan still works.</div>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">3:00 PM</div>
+          <div class="label">Behind</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">canada side</span>
+            <span class="moment-cost">~$33 USD each</span>
+          </div>
+          <h3 class="moment-title">Journey Behind the Falls</h3>
+          <p class="moment-body">From Table Rock Centre, an elevator drops 125 feet through solid rock to a tunnel that takes you <em>behind</em> the Horseshoe Falls. Two viewing portals let you stand directly behind the curtain of falling water. Twenty thousand gallons a second, three feet from your face. The other side has nothing like this.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">5:00 PM</div>
+          <div class="label">Skyline</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">altitude</span>
+            <span class="moment-cost">~$22 USD each</span>
+          </div>
+          <h3 class="moment-title">Skylon Tower observation deck</h3>
+          <p class="moment-body">775 feet up. The observation deck wraps the entire tower; you'll see both Falls, the gorge, the river, and on a clear day all the way to Toronto. The sunset window in late May lands around 8:30 PM. Time it.</p>
+        </div>
+      </div>
+
+      <div class="moment starred">
+        <div class="moment-time">
+          <div class="clock">7:00 PM</div>
+          <div class="label">The big dinner</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">★ celebrate him</span>
+            <span class="moment-cost">$$$</span>
+          </div>
+          <h3 class="moment-title">Skylon Revolving Dining Room <span class="heart">♡</span></h3>
+          <p class="moment-body">Or save money and eat at Queen Victoria Place Restaurant on the patio overlooking the Falls. <em>This is the graduation dinner.</em> Toast him. Tell him every reason you're proud of him. He just finished law school. He's earned every word.</p>
+          <div class="moment-tip"><strong>Reservation note:</strong> Book the Revolving Dining Room two weeks out. Ask for a window table on the inner ring, the one that revolves. The whole room turns once an hour, so you'll see the Falls illuminated from above.</div>
+        </div>
+      </div>
+
+      <div class="moment starred">
+        <div class="moment-time">
+          <div class="clock">10:00 PM</div>
+          <div class="label">Fireworks, take two</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">★ best seat in the house</span>
+            <span class="moment-cost">free</span>
+          </div>
+          <h3 class="moment-title">Queen Victoria Park, front row <span class="heart">♡</span></h3>
+          <p class="moment-body">If you're already in Canada this is the move. Queen Victoria Park has the closest, best, free view of the fireworks, looking right up at them as they burst over the gorge. <em>Spread out a jacket on the lawn. Lean against him.</em> The Falls are illuminated behind you, the fireworks are above the water, the show lasts five minutes and the memory lasts decades.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">11:00 PM</div>
+          <div class="label">Back across</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <h3 class="moment-title">Walk back over the bridge</h3>
+          <p class="moment-body">The Rainbow Bridge is open 24/7. The crossing back to the US is faster than the way out. Goodnight to a long, soaked, perfect day.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day" id="day3">
+    <div class="day-hero">
+      <div class="day-number">day three</div>
+      <div class="day-date">Sunday · May 24, 2026</div>
+      <h2 class="day-title">One Last Rainbow</h2>
+      <p class="day-tagline">A slow morning, one final adventure, and the long quiet ride home with all of it still in your hair.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="moment starred">
+        <div class="moment-time">
+          <div class="clock">6:30 AM</div>
+          <div class="label">Sunrise</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">★ if you can</span>
+            <span class="moment-cost">free</span>
+          </div>
+          <h3 class="moment-title">Sunrise rainbows at Prospect Point <span class="heart">♡</span></h3>
+          <p class="moment-body">Set one alarm. The first sunlight of the day catches the mist at the base of the American Falls and throws a rainbow that sometimes runs the full width of the gorge. <em>It is empty out there at 6:30 AM.</em> Just you, her, the water, and a half-mile of color.</p>
+          <div class="moment-tip"><strong>Trade-off:</strong> If you want to sleep in instead, that's also fine; just push everything below back an hour. You earned it.</div>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">8:30 AM</div>
+          <div class="label">Breakfast</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">slow morning</span>
+            <span class="moment-cost">$</span>
+          </div>
+          <h3 class="moment-title">Breakfast somewhere with windows</h3>
+          <p class="moment-body">The Hard Rock Cafe across from the State Park does a decent breakfast and you'll be in and out fast. For something prettier, the Sheraton at the Falls has a tableside view. Pack: water, sunscreen, layers; the gorge wind picks up by mid-morning.</p>
+        </div>
+      </div>
+
+      <div class="moment starred">
+        <div class="moment-time">
+          <div class="clock">10:00 AM</div>
+          <div class="label">One more</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">★ choose your final adventure</span>
+            <span class="moment-cost">varies</span>
+          </div>
+          <h3 class="moment-title">Pick one big thing</h3>
+          <p class="moment-body">Three options, depending on the kind of last hurrah you want.<br/><br/>
+            <strong>1. Helicopter tour</strong> with Rainbow Air ($120 each, 10 minutes, ridiculous views). The kind of thing you do once.<br/><br/>
+            <strong>2. Whirlpool State Park hike</strong>, four miles north (free). Trail down into the gorge to where the river turns 90 degrees and forms a permanent whirlpool. Quiet, cinematic, no crowds.<br/><br/>
+            <strong>3. Niagara Wine Trail</strong> (US side, ~$60 each in tastings). Twenty wineries within thirty minutes; the Marjim Manor and Schulze are excellent. Or cross to Canada for Niagara-on-the-Lake (Peller Estates, Trius), which is the more famous wine region.</p>
+          <div class="moment-tip"><strong>Romantic dark horse:</strong> The Whirlpool Aero Car (Canadian side, $19 each), a 1916 cable car that crosses the gorge at the whirlpool. Ten minutes, terrifying, beautiful.</div>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">12:30 PM</div>
+          <div class="label">Last lunch</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">final meal</span>
+            <span class="moment-cost">$$</span>
+          </div>
+          <h3 class="moment-title">Wine on Third</h3>
+          <p class="moment-body">A small, intimate spot two blocks from the Falls with high-end tapas and a serious wine list. Order a flight to share. Or for something casual: <em>Anchor Bar</em> (the original home of the Buffalo wing, opened 1935) is a 25-minute Uber to Buffalo and worth it for the history. Great if you've decided to skip the wine trail.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">2:30 PM</div>
+          <div class="label">Last walk</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">say goodbye</span>
+            <span class="moment-cost">free</span>
+          </div>
+          <h3 class="moment-title">One more walk along the rim</h3>
+          <p class="moment-body">From your hotel, walk slowly back along the State Park promenade. Take the photo you've been meaning to take. Pick up a small, unironic souvenir. There's a vintage carriage in the park; ride it once. <em>Look at the water for a long time.</em> You're going to miss it.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">4:00 PM</div>
+          <div class="label">Bus stop</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">load up</span>
+          </div>
+          <h3 class="moment-title">Back to Old Main Street</h3>
+          <p class="moment-body">The same charter zone behind the Visitor Center. Be there fifteen minutes early. OurBus has a 4:00 PM departure most Sundays; confirm the day-of times when you book. Charge phones. Stretch.</p>
+        </div>
+      </div>
+
+      <div class="moment starred">
+        <div class="moment-time">
+          <div class="clock">4:15 PM</div>
+          <div class="label">Homeward</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-meta">
+            <span class="moment-tag">★ the long quiet</span>
+          </div>
+          <h3 class="moment-title">Bus south, sun behind you <span class="heart">♡</span></h3>
+          <p class="moment-body">Eight hours back. <em>Sit on the left this time</em>, the sunset will be on that side as you drop south past the Finger Lakes. Sleep on his shoulder. Watch a movie together with one earbud each. Eat the leftover snacks. Don't say much. You'll be back at GW Bridge by midnight, in your own bed by 1 AM Monday, the sound of the water still in your ears for at least a week.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">
+          <div class="clock">12:30 AM</div>
+          <div class="label">Home</div>
+          <div class="moment-dot"></div>
+        </div>
+        <div class="moment-card">
+          <h3 class="moment-title">Back on the UWS</h3>
+          <p class="moment-body">Drop bags. Don't unpack. Tell each other one favorite moment before you fall asleep. Congratulations, counselor.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── Stay ─────────────── -->
+<section class="section" id="stay">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Where to Sleep</div>
+      <h2 class="section-title">Two Beds &amp; a View</h2>
+      <p class="section-lede">No US-side hotel has a true falls view (the geography won't allow it; the riverfront is all state park). For falls views, you cross to Canada. For walking convenience, you stay in New York. Either way, book this week.</p>
+    </div>
+
+    <div class="stay-grid">
+      <div class="stay-card featured">
+        <div class="stay-tag">★ best US-side</div>
+        <h3 class="stay-name">The Giacomo</h3>
+        <div class="stay-price mono">$$$ · ~$280/night</div>
+        <p class="stay-detail">Boutique 1929 art-deco hotel, formerly the United Office Building. Five-minute walk to the Falls. The penthouse lobby is the local secret for fireworks viewing. Romantic, small, full of detail.</p>
+        <div class="stay-feature">★ The hotel of choice for couples on the US side</div>
+      </div>
+
+      <div class="stay-card">
+        <div class="stay-tag">closest to the falls</div>
+        <h3 class="stay-name">Comfort Inn The Pointe</h3>
+        <div class="stay-price mono">$$ · ~$200/night</div>
+        <p class="stay-detail">Directly across the street from Niagara Falls State Park. The closest hotel to the Falls on the US side. Practical, clean, well-maintained. You will hear the water from your window.</p>
+        <div class="stay-feature">Walking distance: 2 minutes to the brink</div>
+      </div>
+
+      <div class="stay-card">
+        <div class="stay-tag">classic + storied</div>
+        <h3 class="stay-name">The Red Coach Inn</h3>
+        <div class="stay-price mono">$$$ · ~$320/night</div>
+        <p class="stay-detail">Tudor-style, opened in 1923. 500 yards from the Falls. Each room is uniquely decorated, fireplaces in the suites, a celebrated restaurant downstairs. The most "occasion" of the US options.</p>
+        <div class="stay-feature">Has its own restaurant on Friday's dinner list</div>
+      </div>
+
+      <div class="stay-card">
+        <div class="stay-tag">canada · falls view</div>
+        <h3 class="stay-name">Marriott Fallsview</h3>
+        <div class="stay-price mono">$$$$ · ~$420/night</div>
+        <p class="stay-detail">Canadian side. The closest hotel to Horseshoe Falls. Floor-to-ceiling windows; if you book a Fallsview room you're looking at the water from bed. Need passports to cross. Splurge tier.</p>
+        <div class="stay-feature">★ The honeymoon move</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── Eat ─────────────── -->
+<section class="section eat-section" id="eat">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Where to Eat</div>
+      <h2 class="section-title">Tables &amp; Tastings</h2>
+      <p class="section-lede">A short, opinionated list. The reservations to make in advance, and the drop-ins that locals love.</p>
+    </div>
+
+    <div class="eat-grid">
+      <div class="eat-column">
+        <h3>The Reservations</h3>
+        <p class="col-sub">The graduation dinner, the patio sunset, the dress-up nights.</p>
+        <ul class="eat-list">
+          <li>
+            <div class="eat-name"><span class="crown">★</span>Skylon Revolving Dining Room</div>
+            <p class="eat-desc">Saturday's dinner. 775 feet over the Falls; the room turns once an hour and watches the illumination from above. Canadian side. Book two weeks out, request the inner ring.</p>
+            <div class="eat-meta">$$$ · SAT 7PM · CANADA · BOOK AHEAD</div>
+          </li>
+          <li>
+            <div class="eat-name"><span class="crown">★</span>The Red Coach Inn</div>
+            <p class="eat-desc">Friday's dinner. Tudor-style inn from 1923, 500 yards from the Falls, fireplaces, prime rib, and a patio where you can hear the water. Walk-in friendly but reserve.</p>
+            <div class="eat-meta">$$$ · FRI 7PM · US-SIDE · ICONIC</div>
+          </li>
+          <li>
+            <div class="eat-name">Savor (Niagara Falls Culinary Institute)</div>
+            <p class="eat-desc">Modern fine dining run by student chefs in an open kitchen. Locally sourced, seasonal, beautifully plated. The hidden upscale alternative to Red Coach if you want something less classic.</p>
+            <div class="eat-meta">$$$ · US-SIDE · MODERN</div>
+          </li>
+          <li>
+            <div class="eat-name">Queen Victoria Place Restaurant</div>
+            <p class="eat-desc">The patio overlooks Horseshoe Falls. The single best free fireworks seat in town if you book the late table. Canadian side, dressy.</p>
+            <div class="eat-meta">$$$ · CANADA · BOOK AHEAD</div>
+          </li>
+          <li>
+            <div class="eat-name">AG Inspired Cuisine (Niagara-on-the-Lake)</div>
+            <p class="eat-desc">25 minutes north in NOTL. Live music on Friday nights, Wine Country tasting menus, and a duck breast people fly back for. The "we extended the trip a day" tier.</p>
+            <div class="eat-meta">$$$$ · NOTL · LIVE MUSIC FRI</div>
+          </li>
+          <li>
+            <div class="eat-name">The Western Door Steakhouse</div>
+            <p class="eat-desc">Inside Seneca Niagara Resort. Old-school clubby steakhouse: dry-aged ribeye, dim lighting, white tablecloths. Classic American splurge if you want something different.</p>
+            <div class="eat-meta">$$$$ · US-SIDE · STEAKHOUSE</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="eat-column">
+        <h3>The Drop-Ins</h3>
+        <p class="col-sub">Lunch with a view, late-night cravings, and the local legends.</p>
+        <ul class="eat-list">
+          <li>
+            <div class="eat-name"><span class="crown">★</span>Top of the Falls Restaurant</div>
+            <p class="eat-desc">Saturday's lunch. Inside the State Park on Goat Island, with a wall of windows on Horseshoe Falls. Casual, all-American, partner of the Taste NY local-ingredients movement. Reserve a window table.</p>
+            <div class="eat-meta">$$ · US-SIDE · SAT LUNCH · SEASONAL</div>
+          </li>
+          <li>
+            <div class="eat-name"><span class="crown">★</span>Wine on Third</div>
+            <p class="eat-desc">Sunday's lunch. Two blocks from the Falls. Contemporary tapas, a serious by-the-glass wine list, live music on weekends. Order the truffle fries and the crispy artichoke; share everything.</p>
+            <div class="eat-meta">$$ · US-SIDE · SUN LUNCH</div>
+          </li>
+          <li>
+            <div class="eat-name">Fortuna's Italian Restaurant</div>
+            <p class="eat-desc">A Niagara Falls institution since 1945, third-generation family-run. Handmade gnocchi, ravioli, veal, fresh seafood. Buffalo News called it "as much a part of the Niagara Falls landscape as a certain famed cataract."</p>
+            <div class="eat-meta">$$ · US-SIDE · LOCAL LEGEND</div>
+          </li>
+          <li>
+            <div class="eat-name">Anchor Bar (Buffalo)</div>
+            <p class="eat-desc">25 minutes south, a quick Sunday detour. The literal birthplace of the Buffalo wing, original 1964 recipe still served. Crowded, loud, perfect.</p>
+            <div class="eat-meta">$ · BUFFALO · BIRTHPLACE OF WINGS</div>
+          </li>
+          <li>
+            <div class="eat-name">The Silo (Lewiston)</div>
+            <p class="eat-desc">A converted 1940s coal silo on the river, ten miles north. Order the original Haystack: rib-eye, melted mozz, hash browns, hoagie roll. Forty flavors of ice cream after. Quirky, scenic, fun.</p>
+            <div class="eat-meta">$ · LEWISTON · QUIRKY VIEW</div>
+          </li>
+          <li>
+            <div class="eat-name">Polish Nook</div>
+            <p class="eat-desc">The hidden gem. Family-run for 54 years out of a house on a back street ten minutes from the Falls. Pierogies sold by the dozen to take home. The kind of meal you remember a year later.</p>
+            <div class="eat-meta">$ · US-SIDE · HIDDEN GEM</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── Tips ─────────────── -->
+<section class="section" id="tips">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Field Notes</div>
+      <h2 class="section-title">Tips, Tricks &amp; Quiet Knowing</h2>
+      <p class="section-lede">From travel forums, locals, and the kind of hard-won knowledge that saves you twenty minutes in line and forty bucks on a poncho you didn't need.</p>
+    </div>
+
+    <div class="tips-grid">
+      <div class="tip">
+        <div class="tip-num">01</div>
+        <h3 class="tip-title">The Discover Niagara Shuttle is free.</h3>
+        <p class="tip-body">A complimentary trolley runs along the Niagara River corridor, hitting Old Fort Niagara, the Power Vista, the Aquarium, and back to the State Park. <strong>Free, every 30 minutes</strong>, late May through October. Saves Ubers.</p>
+      </div>
+
+      <div class="tip">
+        <div class="tip-num">02</div>
+        <h3 class="tip-title">Bring real ponchos.</h3>
+        <p class="tip-body">The disposable ones from the boat tour will fly off you in the gorge wind. <strong>Pack reusable ponchos</strong> from Amazon ($10 each) and bring an extra dry shirt. The Hurricane Deck at Cave of the Winds will soak the inside of your jeans.</p>
+      </div>
+
+      <div class="tip">
+        <div class="tip-num">03</div>
+        <h3 class="tip-title">Niagara Falls State Park is free.</h3>
+        <p class="tip-body">No entrance fee, ever, 24/7. You only pay for individual attractions inside (Maid of the Mist, Cave of the Winds, Observation Tower). <strong>You can walk the rim and see all three Falls without spending a dollar.</strong></p>
+      </div>
+
+      <div class="tip">
+        <div class="tip-num">04</div>
+        <h3 class="tip-title">Get the Niagara USA Discovery Pass.</h3>
+        <p class="tip-body">$53 per adult, includes Maid of the Mist, Cave of the Winds, Observation Tower, Aquarium of Niagara, and Niagara Gorge trolley. <strong>Saves about $25</strong> if you do all of those, which you will.</p>
+      </div>
+
+      <div class="tip">
+        <div class="tip-num">05</div>
+        <h3 class="tip-title">Passports = many more options.</h3>
+        <p class="tip-body">The Canadian side has the iconic head-on view, Journey Behind the Falls, the Skylon Tower, Clifton Hill, and the best fireworks viewing. <strong>Pack passports.</strong> The Rainbow Bridge crossing is fast except on Saturday afternoon, when you may want to walk back rather than wait in car traffic.</p>
+      </div>
+
+      <div class="tip">
+        <div class="tip-num">06</div>
+        <h3 class="tip-title">Memorial Day weekend = book everything now.</h3>
+        <p class="tip-body">Hotel prices climb 30-50% over a regular weekend, and the cheap rooms vanish first. Boats and Cave of the Winds tickets sell out for prime time slots. <strong>Lock everything in this week.</strong></p>
+      </div>
+
+      <div class="tip">
+        <div class="tip-num">07</div>
+        <h3 class="tip-title">Morning is your friend.</h3>
+        <p class="tip-body">Most tourists do Maid of the Mist between 10 AM and 2 PM. Lines shrink dramatically <strong>before 9:30 AM and after 4:30 PM</strong>. Day 1 in this plan uses the late slot; Day 2's Cave of the Winds uses the early slot.</p>
+      </div>
+
+      <div class="tip">
+        <div class="tip-num">08</div>
+        <h3 class="tip-title">Phones go dumb at the border.</h3>
+        <p class="tip-body">Crossing into Canada, your phone may pick up a Canadian cell tower and roam. <strong>Toggle airplane mode on as you cross</strong>, or set up T-Mobile/Verizon's free Canada day pass before you leave NYC. You don't need data with the Falls in front of you anyway.</p>
+      </div>
+
+      <div class="tip">
+        <div class="tip-num">09</div>
+        <h3 class="tip-title">Niagara is dim after 11 PM.</h3>
+        <p class="tip-body">Once the fireworks end, the tourist district shuts fast. The 24-hour exceptions: the State Park (always open), the Casino, and the Tim Hortons on Niagara St. <strong>Plan dinner to end before 10 PM</strong> so you're at the fireworks vantage point in time.</p>
+      </div>
+
+      <div class="tip">
+        <div class="tip-num">10</div>
+        <h3 class="tip-title">The bus goes both ways for cheaper than you think.</h3>
+        <p class="tip-body">Round-trip on OurBus runs <strong>around $80-100 per person</strong> if you book together. Greyhound is $110-120. Booking 7+ days ahead is the difference between $39 and $89 a leg.</p>
+      </div>
+
+      <div class="tip">
+        <div class="tip-num">11</div>
+        <h3 class="tip-title">Charge in advance.</h3>
+        <p class="tip-body">Bring portable batteries. The bus has outlets, but at the park you'll be photographing constantly and there's nowhere to plug in. <strong>Two 10000 mAh banks split between you</strong> covers the whole weekend.</p>
+      </div>
+
+      <div class="tip">
+        <div class="tip-num">12</div>
+        <h3 class="tip-title">The Cave of the Winds sandals are gone.</h3>
+        <p class="tip-body">As of 2024 the famous souvenir sandals were retired (eco reasons). <strong>Bring water shoes or quick-dry shoes</strong> you don't mind soaking. Old sneakers, Tevas, anything not leather.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── Checklist ─────────────── -->
+<section class="section checklist-section" id="checklist">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Before You Go</div>
+      <h2 class="section-title">Pack &amp; Plan</h2>
+      <p class="section-lede">Two checklists. Tap to mark complete. The booking list goes first; everything in red is time-sensitive.</p>
+    </div>
+
+    <div class="checklist-tabs">
+      <button data-tab="book" class="active">Book &amp; Plan</button>
+      <button data-tab="pack">Packing List</button>
+      <button data-tab="day">Daily Reminders</button>
+    </div>
+
+    <div class="checklist-progress">
+      <div class="checklist-progress-label">
+        <span id="progressTitle">BOOK &amp; PLAN</span>
+        <span id="progressCount">0 of 0</span>
+      </div>
+      <div class="checklist-progress-bar">
+        <div class="checklist-progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <!-- Book & Plan -->
+    <div class="checklist-pane active" id="pane-book">
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Book OurBus tickets, both ways<small>This week · ~$80-100 each</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Book hotel (2 nights, May 22-23)<small>This week · holiday weekend pricing</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Reserve Maid of the Mist (online voucher)<small>2 weeks out · $30.25 each</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Reserve Cave of the Winds, 9:30 AM Saturday<small>1 week out · $23 each · timed entry</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Skylon Tower Revolving Dining Room reservation<small>2 weeks out · Saturday 7 PM · request inner ring</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Red Coach Inn dinner reservation, Friday 7 PM<small>1 week out</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Decide on Sunday morning activity (helicopter / wine / Whirlpool)<small>Helicopter: book through Rainbow Air</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Buy Niagara USA Discovery Pass (saves $25)<small>Day-of OK · $53 each</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Check passports (expiry &gt;6 months)<small>If crossing to Canada</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Set up T-Mobile/Verizon Canada day pass<small>Before departure · ~$5/day</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Order ponchos and water shoes (Amazon)<small>This week · ~$30 total</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Book Sunday lunch at Wine on Third<small>Optional · walk-ins usually OK</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Download offline maps of Niagara Falls<small>Google Maps offline area</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Tell someone the plan + emergency contact<small>Standard travel hygiene</small></div></div>
+    </div>
+
+    <!-- Packing -->
+    <div class="checklist-pane" id="pane-pack">
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Two reusable ponchos<small>not the disposable kind</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Water shoes (or old sneakers)<small>for Cave of the Winds</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Backpack (no checked bags)<small>OurBus carry-on only</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Two changes of clothes per day<small>everything gets wet</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Layers + light jacket<small>gorge mornings are 50°F</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">A nice outfit for Saturday dinner<small>Skylon is dressy-casual</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Phone chargers + 2 portable batteries<small>10000 mAh each</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Travel documents + passports<small>if going to Canada</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Cash ($50-80 for tolls + tips)<small>some attractions are cash-friendlier</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Sunscreen (it's spring but you're outside all day)<small>SPF 30+</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Reusable water bottles<small>filling stations all over the park</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Snacks for the bus<small>no real meal stops · 8.5 hours</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">A book to read aloud<small>or a downloaded show</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Sunglasses<small>spray off the falls = serious glare</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Small first-aid kit<small>blister pads especially</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Reading glasses if needed<small>menus get small in dim restaurants</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">A good camera or phone with cleared storage<small>~500 photos minimum</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Toiletries in carry-on size<small>some hotels don't include shampoo</small></div></div>
+    </div>
+
+    <!-- Daily Reminders -->
+    <div class="checklist-pane" id="pane-day">
+      <div class="check-item"><div class="check-box"></div><div class="check-text">FRIDAY: Set alarm for 5:00 AM<small>5:30 cab to GWB Bus Station</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">FRIDAY: Print or screenshot bus ticket QR<small>signal is spotty in the GWB lower level</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">FRIDAY: Eat breakfast on the bus, not before<small>enjoy the ride</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">FRIDAY: Maid of the Mist boat by 5:30 PM<small>last boats around 6 PM in May</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">FRIDAY: Be at fireworks spot by 9:50 PM<small>show is exactly 10:00 PM, lasts 5 min</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">SATURDAY: Cave of the Winds 9:30 AM slot<small>arrive 9:15 to pick up tickets</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">SATURDAY: Cross to Canada by 2 PM<small>passport check + walking time</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">SATURDAY: At Skylon by 6:45 PM for the 7 PM table<small>dinner takes ~2 hours</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">SATURDAY: Walk back across Rainbow Bridge by 11 PM<small>vehicle traffic gets long after fireworks</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">SUNDAY: 6:15 AM alarm for sunrise rainbow (optional)<small>or sleep in, both are correct</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">SUNDAY: Hotel checkout by 11 AM<small>store bags at front desk</small></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">SUNDAY: At Old Main St bus pickup by 3:45 PM<small>4:00 PM departure</small></div></div>
+    </div>
+
+    <!-- Budget -->
+    <div class="budget">
+      <div class="budget-title display">Estimated total, two people</div>
+      <div class="budget-rows">
+        <div class="budget-row">
+          <span class="budget-label">Round-trip OurBus, two people<small>book early</small></span>
+          <span class="budget-amt">$160 - $200</span>
+        </div>
+        <div class="budget-row">
+          <span class="budget-label">Hotel, 2 nights US-side<small>holiday wknd</small></span>
+          <span class="budget-amt">$420 - $640</span>
+        </div>
+        <div class="budget-row">
+          <span class="budget-label">Maid of the Mist + Cave of the Winds, two people</span>
+          <span class="budget-amt">$107</span>
+        </div>
+        <div class="budget-row">
+          <span class="budget-label">Discovery Pass instead (covers all)<small>save $25</small></span>
+          <span class="budget-amt">$106</span>
+        </div>
+        <div class="budget-row">
+          <span class="budget-label">Saturday Canada attractions (Behind the Falls + Skylon)<small>two people</small></span>
+          <span class="budget-amt">$110</span>
+        </div>
+        <div class="budget-row">
+          <span class="budget-label">Food, ~$70/day per person × 3 days × 2</span>
+          <span class="budget-amt">$420</span>
+        </div>
+        <div class="budget-row">
+          <span class="budget-label">Sunday adventure (helicopter)<small>optional</small></span>
+          <span class="budget-amt">$240</span>
+        </div>
+        <div class="budget-row">
+          <span class="budget-label">Cabs / Ubers / shuttle / souvenirs<small>buffer</small></span>
+          <span class="budget-amt">$150</span>
+        </div>
+        <div class="budget-row total">
+          <span class="budget-label">Estimated total</span>
+          <span class="budget-amt">$1,500 - $2,000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── Footer ─────────────── -->
+<footer class="footer">
+  <div class="footer-mark">E &amp; D</div>
+  <p class="footer-text">A weekend in May, in celebration of his graduation, written for the two of them and the road that takes them to the water.</p>
+  <div class="footer-divider"></div>
+  <div class="footer-meta">NYC → NIAGARA · MAY 22-24, 2026 · 408 MILES · ONE LIFE</div>
+</footer>
+
+<script>
+  // ───── Topbar reveal on scroll ─────
+  const topbar = document.getElementById('topbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight * 0.8) {
+      topbar.classList.add('visible');
+    } else {
+      topbar.classList.remove('visible');
+    }
+  });
+
+  // ───── Day tabs ─────
+  document.querySelectorAll('.days-nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const day = btn.dataset.day;
+      document.querySelectorAll('.days-nav button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.day').forEach(d => d.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('day' + day).classList.add('active');
+      // Smooth scroll to day section
+      document.getElementById('itinerary').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // ───── Checklist tabs ─────
+  const tabLabels = { book: 'BOOK & PLAN', pack: 'PACKING LIST', day: 'DAILY REMINDERS' };
+  document.querySelectorAll('.checklist-tabs button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+      document.querySelectorAll('.checklist-tabs button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.checklist-pane').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('pane-' + tab).classList.add('active');
+      document.getElementById('progressTitle').textContent = tabLabels[tab];
+      updateProgress();
+    });
+  });
+
+  // ───── Checklist items ─────
+  document.querySelectorAll('.check-item').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('checked');
+      updateProgress();
+    });
+  });
+
+  function updateProgress() {
+    const activePane = document.querySelector('.checklist-pane.active');
+    if (!activePane) return;
+    const items = activePane.querySelectorAll('.check-item');
+    const checked = activePane.querySelectorAll('.check-item.checked');
+    const pct = items.length === 0 ? 0 : (checked.length / items.length) * 100;
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressCount').textContent = checked.length + ' of ' + items.length;
+  }
+  updateProgress();
+
+  // ───── Topbar nav anchor smoothing ─────
+  document.querySelectorAll('.topbar-nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+</body>
+</html>
